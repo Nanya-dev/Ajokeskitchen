@@ -1,3 +1,4 @@
+import chefImage from "@/assets/image.png";
 import { Navigation } from "@/components/Navigation";
 import React from "react";
 import { Heart, Award, Users, MapPin } from "lucide-react";
@@ -18,7 +19,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
             <img
-              src="/src/assets/image.png"
+              src={chefImage}
               alt="African woman chef"
               className="w-full h-full object-cover"
             />
