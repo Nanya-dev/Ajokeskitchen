@@ -1,38 +1,43 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import { UtensilsCrossed } from "lucide-react";
+import logo from "@/assets/logo.png";
 
-import Index from "./pages/Index";
-import Menu from "./pages/Menu";
-import Cart from "./pages/Cart";
-import Admin from "./pages/Admin";
-import About from "./pages/About";
-import TrackOrder from "./pages/TrackOrder";
-import NotFound from "./pages/NotFound";
-import Layout from "./components/Layout"; // ✅ added
 
-const queryClient = new QueryClient();
+export default function Home() {
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-orange-600 via-red-600 to-amber-600 text-white relative overflow-hidden">
+      {/* Soft glowing background */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+      </div>
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* <Route path="/menu" element={<Menu />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/track-order" element={<TrackOrder />} />
-          <Route path="/admin" element={<Admin />} /> */}
-          <Route path="*" element={<Index />} />  {/* redirect all to Coming Soon */}
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+      {/* Main content */}
+      <div className="relative z-10">
+        <div className="mb-8 flex justify-center">
+        <div className="w-28 h-28 bg-white rounded-full flex items-center justify-center shadow-2xl transform hover:scale-110 transition-transform overflow-hidden">
+          <img
+            src={logo}
+            alt="Ajoke's Kitchen Logo"
+            className="object-cover w-full h-full"
+          />
+        </div>
 
-export default App;
+        </div>
+        <h1 className="text-6xl md:text-7xl font-bold mb-4">Ajoke’s Kitchen</h1>
+        <p className="text-3xl md:text-4xl font-semibold bg-white/20 px-6 py-3 rounded-full border border-white/30 backdrop-blur-md inline-block">
+          Coming Soon
+        </p>
+
+        <p className="mt-8 text-lg text-white/80 max-w-xl mx-auto">
+          We’re cooking something special — stay tuned for the grand opening!
+        </p>
+      </div>
+
+      {/* Footer */}
+      <footer className="absolute bottom-6 text-white/70 text-sm">
+        Made with ❤️ and spice in Moscow
+      </footer>
+    </div>
+  );
+}
