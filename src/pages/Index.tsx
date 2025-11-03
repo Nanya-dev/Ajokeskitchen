@@ -12,12 +12,15 @@ export default function Home() {
 
       {/* Main content */}
       <div className="relative z-10">
-        <div className="flex justify-center mb-8">
-          <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-2xl">
-            <UtensilsCrossed className="w-12 h-12 text-orange-600" />
-          </div>
+        <div className="mb-8 flex justify-center">
+        <div className="w-28 h-28 bg-white rounded-full flex items-center justify-center shadow-2xl transform hover:scale-110 transition-transform overflow-hidden">
+            <img
+              src={require("@/assets/logo.png")}
+              alt="Ajoke's Kitchen Logo"
+              className="object-contain w-24 h-24"
+            />
         </div>
-
+        </div>
         <h1 className="text-6xl md:text-7xl font-bold mb-4">Ajoke’s Kitchen</h1>
         <p className="text-3xl md:text-4xl font-semibold bg-white/20 px-6 py-3 rounded-full border border-white/30 backdrop-blur-md inline-block">
           Coming Soon
