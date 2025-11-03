@@ -22,60 +22,13 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          {/* Wrap customer-facing pages with Layout */}
-          <Route
-            path="/"
-            element={
-              <Layout currentPageName="Home">
-                <Index />
-              </Layout>
-            }
-          />
-          <Route
-            path="/menu"
-            element={
-              <Layout currentPageName="Menu">
-                <Menu />
-              </Layout>
-            }
-          />
-          <Route
-            path="/cart"
-            element={
-              <Layout currentPageName="Checkout">
-                <Cart />
-              </Layout>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <Layout currentPageName="About">
-                <About />
-              </Layout>
-            }
-          />
-          <Route
-            path="/track-order"
-            element={
-              <Layout currentPageName="OrderTracking">
-                <TrackOrder />
-              </Layout>
-            }
-          />
-
-          {/* Admin page can have its own layout */}
-          <Route
-            path="/admin"
-            element={
-              <Layout currentPageName="AdminOrders">
-                <Admin />
-              </Layout>
-            }
-          />
-
-          {/* Catch-all */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Index />} />
+          {/* <Route path="/menu" element={<Menu />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/track-order" element={<TrackOrder />} />
+          <Route path="/admin" element={<Admin />} /> */}
+          <Route path="*" element={<Index />} />  {/* redirect all to Coming Soon */}
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
