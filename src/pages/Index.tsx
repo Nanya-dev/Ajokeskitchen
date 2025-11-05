@@ -40,7 +40,7 @@ export default function Home() {
           </p>
           <button
             onClick={() => setShowBanner(false)}
-            className="text-white hover:text-orange-300 transition"
+            className="text-white hover:text-green-300 transition"
           >
             <X size={20} />
           </button>
